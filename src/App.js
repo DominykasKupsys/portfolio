@@ -5,7 +5,6 @@ import { useState } from "react";
 import OpenApp from "./components/OpenApp";
 import notepadLogo from "./assets/IMG/notepad_logo.png";
 import folderLogo from "./assets/IMG/xp_folder_iconm.png";
-import AppFolder from "./components/AppFolder";
 
 function App() {
   const [showApp, setShowApp] = useState("no apps are open");

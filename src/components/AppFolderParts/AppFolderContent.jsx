@@ -8,97 +8,34 @@ import MySQL from "../../assets/IMG/MySQLogo.png";
 import MongoDB from "../../assets/IMG/MongoDBlogo.png";
 import Node from "../../assets/IMG/node.png";
 
+const logos = [
+  { src: HTML5Logo, alt: "HTML5", name: "HTML" },
+  { src: CSSLogo, alt: "CSS", name: "CSS" },
+  { src: JSLogo, alt: "JavaScript", name: "JavaScript" },
+  { src: ReactLogo, alt: "React", name: "React" },
+  { src: BoostrapLogo, alt: "Bootstrap", name: "Bootstrap" },
+  { src: Node, alt: "Node", name: "Node" },
+  { src: MySQL, alt: "MySQL", name: "MySQL" },
+  { src: MongoDB, alt: "MongoDB", name: "MongoDB" },
+];
+
 const AppFolderContent = () => {
   return (
-    <div className="Folder_content">
-      <div className="Folder_content_item">
-        <div className="row mt-3">
-          <div className="col-4 d-flex justify-content-center">
+    <div className="Folder_content d-flex gap-3 flex-wrap">
+      {logos.map((logo, index) => (
+        <div key={index} className="ms-2 mt-3 app_icons">
+          <div className="d-flex justify-content-center">
             <div className="d-flex flex-row align-items-center">
-              <img src={HTML5Logo} alt="HTML5" className="Skill_icons" />
+              <img src={logo.src} alt={logo.alt} className="Skill_icons" />
               <div className="d-flex flex-column">
-                <span>HTML</span>
-                <span>Shortcut</span>
-                <span>1KB</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-4 d-flex justify-content-center">
-            <div className="d-flex flex-row align-items-center">
-              <img src={CSSLogo} alt="HTML5" className="Skill_icons" />
-              <div className="d-flex flex-column">
-                <span>CSS</span>
-                <span>Shortcut</span>
-                <span>1KB</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-4 d-flex justify-content-center">
-            <div className="d-flex flex-row align-items-center">
-              <img src={JSLogo} alt="HTML5" className="Skill_icons" />
-              <div className="d-flex flex-column">
-                <span>JavaScript</span>
+                <span>{logo.name}</span>
                 <span>Shortcut</span>
                 <span>1KB</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="row mt-3">
-          <div className="col-4 d-flex justify-content-center">
-            <div className="d-flex flex-row align-items-center">
-              <img src={ReactLogo} alt="HTML5" className="Skill_icons" />
-              <div className="d-flex flex-column">
-                <span>React</span>
-                <span>Shortcut</span>
-                <span>1KB</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-4 d-flex justify-content-center">
-            <div className="d-flex flex-row align-items-center">
-              <img src={BoostrapLogo} alt="HTML5" className="Skill_icons" />
-              <div className="d-flex flex-column">
-                <span>Bootstrap</span>
-                <span>Shortcut</span>
-                <span>1KB</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-4 d-flex justify-content-center">
-            <div className="d-flex flex-row align-items-center">
-              <img src={Node} alt="HTML5" className="Skill_icons" />
-              <div className="d-flex flex-column">
-                <span>Node</span>
-                <span>Shortcut</span>
-                <span>1KB</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row mt-3">
-          <div className="col-4 d-flex justify-content-center">
-            <div className="d-flex flex-row align-items-center">
-              <img src={MySQL} alt="HTML5" className="Skill_icons" />
-              <div className="d-flex flex-column">
-                <span>MySQL</span>
-                <span>Shortcut</span>
-                <span>1KB</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-4 d-flex justify-content-center">
-            <div className="d-flex flex-row align-items-center">
-              <img src={MongoDB} alt="HTML5" className="Skill_icons" />
-              <div className="d-flex flex-column">
-                <span>MongoDB</span>
-                <span>Shortcut</span>
-                <span>1KB</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
