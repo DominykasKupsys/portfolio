@@ -1,0 +1,33 @@
+.notepad {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-right: 4px solid #0055e9;
+  border-bottom: 4px solid #0055e9;
+  border-left: 4px solid #0055e9;
+  width: 40rem;
+  height: 30rem;
+}
+.notepad_header {
+  background-image: linear-gradient(
+    to bottom,
+    #2178f5,
+    #0055e9 50%,
+    #2178f5,
+    #0044b5
+  );
+  height: 2rem;
+}
+.notepad_logo {
+  width: 2rem;
+  height: 2rem;
+}
+.close_icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.notepad_navbar {
+  background-color: #edebdd;
+}
+.notepad_content {
+  max-height: calc(100% - 3.5rem);
+}

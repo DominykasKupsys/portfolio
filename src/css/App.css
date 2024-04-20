@@ -6,3 +6,11 @@
   background-size: cover;
   background-position: center;
 }
+.app_icon {
+  height: 5rem;
+  width: 5rem;
+}
+.app {
+  width: 5rem;
+  color: white;
+}
