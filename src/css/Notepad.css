@@ -6,6 +6,7 @@
   border-left: 4px solid #0055e9;
   width: 40rem;
   height: 30rem;
+  z-index: 2;
 }
 .notepad_header {
   background-image: linear-gradient(
@@ -27,6 +28,7 @@
 }
 .notepad_navbar {
   background-color: #edebdd;
+  padding-left: 1rem;
 }
 .notepad_content {
   max-height: calc(100% - 3.5rem);

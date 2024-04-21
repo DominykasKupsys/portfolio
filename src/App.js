@@ -5,22 +5,30 @@ import { useState } from "react";
 import OpenApp from "./components/OpenApp";
 import notepadLogo from "./assets/IMG/notepad_logo.png";
 import folderLogo from "./assets/IMG/xp_folder_iconm.png";
+import githubLogo from "./assets/IMG/githublogo.webp";
 
 function App() {
-  const [showApp, setShowApp] = useState("no apps are open");
-  console.log(showApp);
-  const handleAppClose = () => {
-    setShowApp("no apps are open");
+  const [openApps, setOpenApps] = useState([]);
+
+  const handleAppOpen = (appName) => {
+    if (!openApps.includes(appName)) {
+      setOpenApps([...openApps, appName]);
+    }
   };
+
+  const handleAppClose = (appName) => {
+    setOpenApps(openApps.filter((app) => app !== appName));
+  };
+
   return (
-    <div className="container-fluid background ">
+    <div className="container-fluid background">
       <main className="app-content d-flex justify-content-center z-1">
         <div className="app text-center p-0">
           <img
             src={notepadLogo}
             className="app_icon"
             alt="notepad app"
-            onClick={() => setShowApp("notepad is open")}
+            onClick={() => handleAppOpen("notepad is open")}
           />
           My Soft Skills
         </div>
@@ -29,16 +37,27 @@ function App() {
             src={folderLogo}
             className="app_icon"
             alt="folder"
-            onClick={() => setShowApp("folder is open")}
+            onClick={() => handleAppOpen("folder is open")}
           />
           My Technical Skills
         </div>
-        {showApp === "notepad is open" && (
-          <OpenApp handleAppClose={handleAppClose} showApp={showApp} />
-        )}
-        {showApp === "folder is open" && (
-          <OpenApp handleAppClose={handleAppClose} showApp={showApp} />
-        )}
+        <div className="app text-center p-0">
+          <a
+            href="https://github.com/DominykasKupsys"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={githubLogo} className="app_icon" alt="github app" />
+            My GitHub
+          </a>
+        </div>
+        {openApps.map((showApp, index) => (
+          <OpenApp
+            key={index}
+            handleAppClose={() => handleAppClose(showApp)}
+            showApp={showApp}
+          />
+        ))}
       </main>
       <WindowsFooter />
     </div>

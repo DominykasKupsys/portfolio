@@ -13,4 +13,11 @@
 .app {
   width: 5rem;
   color: white;
+  font-size: 10px;
+  font-family: Tahoma, "Noto Sans", sans-serif;
+  z-index: 1;
+}
+.app a {
+  text-decoration: none;
+  color: white;
 }

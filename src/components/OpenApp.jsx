@@ -1,14 +1,20 @@
+// OpenApp.js
 import React from "react";
 import closeButton from "../assets/IMG/windows_close_button.png";
 import notepadLogo from "../assets/IMG/notepad_logo.png";
-import Notepad from "./Notepad";
 import folderLogo from "../assets/IMG/xp_folder_iconm.png";
 import "../css/Notepad.css";
 import AppFolder from "./AppFolder";
 
 const OpenApp = ({ handleAppClose, showApp }) => {
+  const value = `My Soft Skills:
+  Honesty, 
+  Hard work, 
+  Responsibility, 
+  Loyalty, 
+  Always trying to improve.`;
   return (
-    <div className="notepad mt-5">
+    <div className="notepad">
       <div className="notepad_header d-flex justify-content-between">
         <div>
           {showApp === "notepad is open" && (
@@ -27,7 +33,7 @@ const OpenApp = ({ handleAppClose, showApp }) => {
             src={closeButton}
             className="close_icon"
             alt="close button"
-            onClick={handleAppClose}
+            onClick={() => handleAppClose(showApp)}
           />
         </div>
       </div>
@@ -47,7 +53,13 @@ const OpenApp = ({ handleAppClose, showApp }) => {
         <div className="notepad_navbar_item">Help</div>
       </div>
       <div className="notepad_content bg-light h-100">
-        {showApp === "notepad is open" && <Notepad />}
+        {showApp === "notepad is open" && (
+          <textarea
+            className="w-100 h-100 p-2 border-0"
+            style={{ resize: "none", outline: "none", textDecoration: "none" }}
+            defaultValue={value}
+          ></textarea>
+        )}
         {showApp === "folder is open" && <AppFolder />}
       </div>
     </div>
