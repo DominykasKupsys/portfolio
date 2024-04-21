@@ -6,6 +6,7 @@ import AppFolder from "./AppFolder";
 import { Rnd } from "react-rnd";
 
 const OpenApp = ({ handleAppClose, showApp }) => {
+  let height = 300;
   const value = `My Soft Skills:
   Honesty, 
   Hard work, 
@@ -13,8 +14,18 @@ const OpenApp = ({ handleAppClose, showApp }) => {
   Loyalty, 
   Always trying to improve.`;
   return (
-    <Rnd bounds=".container-fluid">
-      <div className="notepad">
+    <Rnd
+      default={{
+        x: 150,
+        y: 205,
+        width: 500,
+        height: { height },
+      }}
+      minWidth={500}
+      minHeight={300}
+      bounds=".container-fluid"
+    >
+      <div className="notepad" style={{ height: height }}>
         <div className="notepad_header d-flex justify-content-between">
           <div>
             {showApp === "notepad is open" && (
@@ -56,7 +67,10 @@ const OpenApp = ({ handleAppClose, showApp }) => {
           )}
           <div className="notepad_navbar_item">Help</div>
         </div>
-        <div className="notepad_content bg-light h-100">
+        <div
+          className="notepad_content bg-light"
+          style={{ height: `calc(100% - 3.5rem)` }}
+        >
           {showApp === "notepad is open" && (
             <textarea
               className="w-100 h-100 p-2 border-0"

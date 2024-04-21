@@ -1,7 +1,9 @@
-.background {
-  position: relative;
+.container-fluid {
   height: 100vh;
   width: 100vw;
+}
+.background {
+  position: relative;
   background-image: url("../assets/IMG/windowsXpBackground.jpg");
   background-size: cover;
   background-position: center;
@@ -63,15 +65,13 @@
   height: 4rem;
 }
 
-.notepad {
+/* .notepad {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-right: 4px solid #0055e9;
   border-bottom: 4px solid #0055e9;
   border-left: 4px solid #0055e9;
-  width: 40rem;
-  height: 30rem;
-}
+} */
 .react-draggable-dragged {
   z-index: 2;
 }
@@ -84,6 +84,8 @@
     #0044b5
   );
   height: 2rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .notepad_logo {
   width: 2rem;
@@ -98,7 +100,13 @@
   padding-left: 1rem;
 }
 .notepad_content {
-  max-height: calc(100% - 3.5rem);
+  border-right: 4px solid #0055e9;
+  border-bottom: 4px solid #0055e9;
+  border-left: 4px solid #0055e9;
+}
+.notepad_navbar {
+  border-right: 4px solid #0055e9;
+  border-left: 4px solid #0055e9;
 }
 
 .skill_logo {
