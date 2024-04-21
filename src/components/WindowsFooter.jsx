@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../css/WindowsFooter.css";
 import WindowsStartButton from "../assets/IMG/windows_xp_start_button (2).png";
 
 const WindowsFooter = () => {

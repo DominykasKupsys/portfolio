@@ -6,6 +6,7 @@ import OpenApp from "./components/OpenApp";
 import notepadLogo from "./assets/IMG/notepad_logo.png";
 import folderLogo from "./assets/IMG/xp_folder_iconm.png";
 import githubLogo from "./assets/IMG/githublogo.webp";
+import { Rnd } from "react-rnd";
 
 function App() {
   const [openApps, setOpenApps] = useState([]);
@@ -22,7 +23,7 @@ function App() {
 
   return (
     <div className="container-fluid background">
-      <main className="app-content d-flex justify-content-center z-1">
+      <main className="app-content d-flex justify-content-center">
         <div className="app text-center p-0">
           <img
             src={notepadLogo}
@@ -52,11 +53,13 @@ function App() {
           </a>
         </div>
         {openApps.map((showApp, index) => (
-          <OpenApp
-            key={index}
-            handleAppClose={() => handleAppClose(showApp)}
-            showApp={showApp}
-          />
+          <Rnd bounds=".container-fluid">
+            <OpenApp
+              key={index}
+              handleAppClose={() => handleAppClose(showApp)}
+              showApp={showApp}
+            />
+          </Rnd>
         ))}
       </main>
       <WindowsFooter />

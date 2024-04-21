@@ -1,7 +1,6 @@
 import React from "react";
 import left from "../assets/IMG/left.png";
 import right from "../assets/IMG/right.png";
-import "../css/AppFolders.css";
 import share_folder from "../assets/IMG/share_folder_icon.png";
 import search from "../assets/IMG/searchicon.png";
 import folder from "../assets/IMG/xp_folder_iconm.png";

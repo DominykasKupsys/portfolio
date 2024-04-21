@@ -1,9 +1,7 @@
-// OpenApp.js
 import React from "react";
 import closeButton from "../assets/IMG/windows_close_button.png";
 import notepadLogo from "../assets/IMG/notepad_logo.png";
 import folderLogo from "../assets/IMG/xp_folder_iconm.png";
-import "../css/Notepad.css";
 import AppFolder from "./AppFolder";
 
 const OpenApp = ({ handleAppClose, showApp }) => {
