@@ -6,7 +6,6 @@ import OpenApp from "./components/OpenApp";
 import notepadLogo from "./assets/IMG/notepad_logo.png";
 import folderLogo from "./assets/IMG/xp_folder_iconm.png";
 import githubLogo from "./assets/IMG/githublogo.webp";
-import { Rnd } from "react-rnd";
 
 function App() {
   const [openApps, setOpenApps] = useState([]);
@@ -53,13 +52,11 @@ function App() {
           </a>
         </div>
         {openApps.map((showApp, index) => (
-          <Rnd bounds=".container-fluid">
-            <OpenApp
-              key={index}
-              handleAppClose={() => handleAppClose(showApp)}
-              showApp={showApp}
-            />
-          </Rnd>
+          <OpenApp
+            key={index}
+            handleAppClose={() => handleAppClose(showApp)}
+            showApp={showApp}
+          />
         ))}
       </main>
       <WindowsFooter />
