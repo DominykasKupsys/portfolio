@@ -2,12 +2,20 @@ import React, { useState } from "react";
 import closeButton from "../assets/IMG/windows_close_button.png";
 import notepadLogo from "../assets/IMG/notepad_logo.png";
 import folderLogo from "../assets/IMG/xp_folder_iconm.png";
-import AppFolder from "./AppFolder";
 import { Rnd } from "react-rnd";
-import InternetExplorer from "./InterentExplorer";
 import resizeButton from "../assets/IMG/resizeButton.jpg";
+import left from "../assets/IMG/left.png";
+import right from "../assets/IMG/right.png";
+import share_folder from "../assets/IMG/sharefolder.png";
+import search from "../assets/IMG/searchicon.png";
+import openFolder from "../assets/IMG/openfolder.png";
+import foldericon2 from "../assets/IMG/foldericon.png";
+import goIcon from "../assets/IMG/go.png";
+import folderSearchIcon from "../assets/IMG/folder_search_icom.png";
+import AppFolderContent from "./AppContent/AppFolderContent";
+import InternetExplorer from "./AppContent/InterentExplorer";
 
-const OpenApp = ({ handleAppClose, showApp }) => {
+const AppContainer = ({ handleAppClose, showApp }) => {
   const [size, setSize] = useState({ width: 750, height: 500 });
   const [resize, setResize] = useState("");
   const [asis, setAsis] = useState({ x: 400, y: 90 });
@@ -26,7 +34,7 @@ const OpenApp = ({ handleAppClose, showApp }) => {
       setResize("fullscreen");
     }
   }
-  const value = `My Soft Skills:
+  const NotepadText = `My Soft Skills:
   Honesty, 
   Hard work, 
   Responsibility, 
@@ -58,18 +66,24 @@ const OpenApp = ({ handleAppClose, showApp }) => {
         <div className="notepad_header d-flex justify-content-between">
           <div>
             {showApp === "notepad is open" && (
-              <img
-                src={notepadLogo}
-                className="notepad_logo"
-                alt="notepad logo"
-              />
+              <div className="d-flex text-light">
+                <img
+                  src={notepadLogo}
+                  className="notepad_logo"
+                  alt="notepad logo"
+                />
+                <p>My Soft Skills - Notepad</p>
+              </div>
             )}
             {showApp === "folder is open" && (
-              <img
-                src={folderLogo}
-                className="notepad_logo"
-                alt="folder logo"
-              />
+              <div className="d-flex text-light">
+                <img
+                  src={folderLogo}
+                  className="notepad_logo"
+                  alt="folder logo"
+                />
+                <p>My Technical Skills</p>
+              </div>
             )}
           </div>
           <div className="d-flex me-2">
@@ -124,10 +138,64 @@ const OpenApp = ({ handleAppClose, showApp }) => {
                 outline: "none",
                 textDecoration: "none",
               }}
-              defaultValue={value}
+              defaultValue={NotepadText}
             ></textarea>
           )}
-          {showApp === "folder is open" && <AppFolder />}
+          <div className="Folder_nav">
+            <div className="d-flex flex-row align-items-center gap-2">
+              <div>
+                <img src={left} alt="left arrow" className="arrows disabled" />{" "}
+                Back
+                <img
+                  src={right}
+                  alt="right arrow"
+                  className="arrows disabled mx-2"
+                />
+                <img
+                  src={share_folder}
+                  alt="share folder"
+                  className="share_folder"
+                />
+              </div>
+              <div className="Search_folders px-2">
+                <img
+                  src={search}
+                  alt="left arrow"
+                  className="Search_folders_icons"
+                />{" "}
+                Search
+                <img
+                  src={openFolder}
+                  alt="right arrow"
+                  className="Search_folders_icons"
+                />{" "}
+                Folders
+              </div>
+              <div>
+                <img src={foldericon2} alt="move to" className="other_icons" />
+              </div>
+            </div>
+          </div>
+          <div className="Folder_search">
+            <div className="row">
+              <div className="col-2 d-flex align-items-center">Address</div>
+              <div className="col-8 search_box">
+                <img
+                  src={folderSearchIcon}
+                  alt="folder search icon"
+                  className="go_Icon"
+                />
+                {showApp === "folder is open" &&
+                  "C:\\Portfolio\\Technical Skills"}
+                {showApp === "Internet Explorer is open" &&
+                  "C:\\Portfolio\\Projects"}
+              </div>
+              <div className="col-2 d-flex align-items-center ">
+                <img src={goIcon} alt="go Icon" className="go_Icon" /> Go
+              </div>
+            </div>
+          </div>
+          {showApp === "folder is open" && <AppFolderContent />}
           {showApp === "Internet Explorer is open" && <InternetExplorer />}
         </div>
       </div>
@@ -135,4 +203,4 @@ const OpenApp = ({ handleAppClose, showApp }) => {
   );
 };
 
-export default OpenApp;
+export default AppContainer;

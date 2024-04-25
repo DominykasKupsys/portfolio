@@ -3,23 +3,23 @@ import "./css/App.css";
 import WindowsFooter from "./components/WindowsFooter";
 import { useState } from "react";
 import { Rnd } from "react-rnd";
-import OpenApp from "./components/OpenApp";
+import AppContainer from "./components/AppContainer";
 import notepadLogo from "./assets/IMG/notepadappicom.png";
 import folderLogo from "./assets/IMG/openfolder.png";
 import githubLogo from "./assets/IMG/githublogo.webp";
 import InternetExplorerLogo from "./assets/IMG/internetExplorer_icon.png";
 
 function App() {
-  const [openApps, setOpenApps] = useState([]);
+  const [AppContainers, setAppContainers] = useState([]);
 
   const handleAppOpen = (appName) => {
-    if (!openApps.includes(appName)) {
-      setOpenApps([...openApps, appName]);
+    if (!AppContainers.includes(appName)) {
+      setAppContainers([...AppContainers, appName]);
     }
   };
 
   const handleAppClose = (appName) => {
-    setOpenApps(openApps.filter((app) => app !== appName));
+    setAppContainers(AppContainers.filter((app) => app !== appName));
   };
 
   return (
@@ -69,8 +69,8 @@ function App() {
             <p>My Projects</p>
           </div>
         </Rnd>
-        {openApps.map((showApp, index) => (
-          <OpenApp
+        {AppContainers.map((showApp, index) => (
+          <AppContainer
             key={index}
             handleAppClose={() => handleAppClose(showApp)}
             showApp={showApp}
