@@ -13,6 +13,10 @@
   height: 5rem;
   width: 5rem;
 }
+.app_icon_hd {
+  height: 2rem;
+  width: 2rem;
+}
 .app {
   width: 5rem;
   color: white;
@@ -169,4 +173,20 @@
 }
 .start_icon {
   height: 100%;
+}
+.InternetExplorer_content {
+  background-image: url("../assets/IMG/InternetExplorerBackground.avif");
+  height: calc(100% - 3.8rem);
+}
+.project_list_item {
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
 }

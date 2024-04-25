@@ -4,9 +4,10 @@ import notepadLogo from "../assets/IMG/notepad_logo.png";
 import folderLogo from "../assets/IMG/xp_folder_iconm.png";
 import AppFolder from "./AppFolder";
 import { Rnd } from "react-rnd";
+import InternetExplorer from "./InterentExplorer";
 
 const OpenApp = ({ handleAppClose, showApp }) => {
-  let height = 300;
+  let height = 500;
   const value = `My Soft Skills:
   Honesty, 
   Hard work, 
@@ -18,7 +19,7 @@ const OpenApp = ({ handleAppClose, showApp }) => {
       default={{
         x: 150,
         y: 205,
-        width: 500,
+        width: 750,
         height: { height },
       }}
       minWidth={500}
@@ -83,6 +84,7 @@ const OpenApp = ({ handleAppClose, showApp }) => {
             ></textarea>
           )}
           {showApp === "folder is open" && <AppFolder />}
+          {showApp === "Internet Explorer is open" && <InternetExplorer />}
         </div>
       </div>
     </Rnd>

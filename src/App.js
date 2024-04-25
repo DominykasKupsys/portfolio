@@ -6,6 +6,7 @@ import OpenApp from "./components/OpenApp";
 import notepadLogo from "./assets/IMG/notepad_logo.png";
 import folderLogo from "./assets/IMG/xp_folder_iconm.png";
 import githubLogo from "./assets/IMG/githublogo.webp";
+import InternetExplorerLogo from "./assets/IMG/internetExplorer_icon.png";
 
 function App() {
   const [openApps, setOpenApps] = useState([]);
@@ -47,9 +48,18 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={githubLogo} className="app_icon" alt="github app" />
+            <img src={githubLogo} className="app_icon_hd" alt="github app" />
             My GitHub
           </a>
+        </div>
+        <div className="app text-center p-0">
+          <img
+            src={InternetExplorerLogo}
+            className="app_icon_hd"
+            alt="notepad app"
+            onClick={() => handleAppOpen("Internet Explorer is open")}
+          />
+          My Projects
         </div>
         {openApps.map((showApp, index) => (
           <OpenApp
