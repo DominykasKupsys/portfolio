@@ -2,9 +2,10 @@ import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./css/App.css";
 import WindowsFooter from "./components/WindowsFooter";
 import { useState } from "react";
+import { Rnd } from "react-rnd";
 import OpenApp from "./components/OpenApp";
-import notepadLogo from "./assets/IMG/notepad_logo.png";
-import folderLogo from "./assets/IMG/xp_folder_iconm.png";
+import notepadLogo from "./assets/IMG/notepadappicom.png";
+import folderLogo from "./assets/IMG/openfolder.png";
 import githubLogo from "./assets/IMG/githublogo.webp";
 import InternetExplorerLogo from "./assets/IMG/internetExplorer_icon.png";
 
@@ -24,43 +25,50 @@ function App() {
   return (
     <div className="container-fluid background">
       <main className="app-content d-flex justify-content-center">
-        <div className="app text-center p-0">
-          <img
-            src={notepadLogo}
-            className="app_icon"
-            alt="notepad app"
-            onClick={() => handleAppOpen("notepad is open")}
-          />
-          My Soft Skills
-        </div>
-        <div className="app text-center p-0">
-          <img
-            src={folderLogo}
-            className="app_icon"
-            alt="folder"
-            onClick={() => handleAppOpen("folder is open")}
-          />
-          My Technical Skills
-        </div>
-        <div className="app text-center p-0">
-          <a
-            href="https://github.com/DominykasKupsys"
-            target="_blank"
-            rel="noopener noreferrer"
+        <Rnd default={{ x: 0, y: 0 }}>
+          <div className="app text-center p-0">
+            <img
+              src={notepadLogo}
+              className="app_icon"
+              alt="notepad app"
+              onDoubleClick={() => handleAppOpen("notepad is open")}
+            />
+            <p>My Soft Skills</p>
+          </div>
+        </Rnd>
+        <Rnd default={{ x: 0, y: 80 }}>
+          <div className="app text-center p-0">
+            <img
+              src={folderLogo}
+              className="app_icon"
+              alt="folder"
+              onDoubleClick={() => handleAppOpen("folder is open")}
+            />
+            <p>My Technical Skills</p>
+          </div>
+        </Rnd>
+        <Rnd default={{ x: 0, y: 160 }}>
+          <div
+            className="app text-center p-0"
+            onDoubleClick={() =>
+              window.open("https://github.com/DominykasKupsys", "_blank")
+            }
           >
-            <img src={githubLogo} className="app_icon_hd" alt="github app" />
-            My GitHub
-          </a>
-        </div>
-        <div className="app text-center p-0">
-          <img
-            src={InternetExplorerLogo}
-            className="app_icon_hd"
-            alt="notepad app"
-            onClick={() => handleAppOpen("Internet Explorer is open")}
-          />
-          My Projects
-        </div>
+            <img src={githubLogo} className="app_icon" alt="github app" />
+            <p>My Github</p>
+          </div>
+        </Rnd>
+        <Rnd default={{ x: 0, y: 240 }}>
+          <div className="app text-center p-0">
+            <img
+              src={InternetExplorerLogo}
+              className="app_icon"
+              alt="notepad app"
+              onDoubleClick={() => handleAppOpen("Internet Explorer is open")}
+            />
+            <p>My Projects</p>
+          </div>
+        </Rnd>
         {openApps.map((showApp, index) => (
           <OpenApp
             key={index}

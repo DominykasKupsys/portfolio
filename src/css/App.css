@@ -1,6 +1,8 @@
 .container-fluid {
   height: 100vh;
   width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 .background {
   position: relative;
@@ -10,12 +12,8 @@
   overflow: hidden;
 }
 .app_icon {
-  height: 5rem;
-  width: 5rem;
-}
-.app_icon_hd {
-  height: 2rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
 }
 .app {
   width: 5rem;
