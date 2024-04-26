@@ -51,24 +51,24 @@ function App() {
 
   return (
     <div className="container-fluid background">
-      <main className="app-content d-flex justify-content-center">
+      <main className="content d-flex justify-content-center">
         <Rnd default={{ x: 0, y: 0 }}>
-          <div className="app text-center p-0">
+          <div className="app_shortcut text-center p-0">
             <img
               src={notepadLogo}
-              className="app_icon"
-              alt="notepad app"
+              className="app_shortcut_icon"
+              alt="notepad app shortcut"
               onDoubleClick={() => handleAppOpen("notepad is open")}
             />
             <p>My Soft Skills</p>
           </div>
         </Rnd>
         <Rnd default={{ x: 0, y: 80 }}>
-          <div className="app text-center p-0">
+          <div className="app_shortcut text-center p-0">
             <img
               src={folderLogo}
-              className="app_icon"
-              alt="folder"
+              className="app_shortcut_icon"
+              alt="folder app shortcut"
               onDoubleClick={() => handleAppOpen("folder is open")}
             />
             <p>My Technical Skills</p>
@@ -76,21 +76,25 @@ function App() {
         </Rnd>
         <Rnd default={{ x: 0, y: 160 }}>
           <div
-            className="app text-center p-0"
+            className="app_shortcut text-center p-0"
             onDoubleClick={() =>
               window.open("https://github.com/DominykasKupsys", "_blank")
             }
           >
-            <img src={githubLogo} className="app_icon" alt="github app" />
+            <img
+              src={githubLogo}
+              className="app_shortcut_icon"
+              alt="github app shortcut"
+            />
             <p>My Github</p>
           </div>
         </Rnd>
         <Rnd default={{ x: 0, y: 240 }}>
-          <div className="app text-center p-0">
+          <div className="app_shortcut text-center p-0 t">
             <img
               src={InternetExplorerLogo}
-              className="app_icon"
-              alt="notepad app"
+              className="app_shortcut_icon"
+              alt="notepad app shortcut"
               onDoubleClick={() => handleAppOpen("Internet Explorer is open")}
             />
             <p>My Projects</p>

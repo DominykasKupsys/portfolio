@@ -1,135 +1,94 @@
-import React from "react";
-import PetWars from "../../assets/IMG/PetWars.png";
-import MySQL from "../../assets/IMG/MySQLogo.png";
-import Node from "../../assets/IMG/node.png";
-import CSSLogo from "../../assets/IMG/csslogo.png";
-import JSLogo from "../../assets/IMG/JavaScript-Logo.webp";
-import expressLogo from "../../assets/IMG/expressJSlogo.png";
-import prismaLogo from "../../assets/IMG/primsaIcON.png";
-import ReactLogo from "../../assets/IMG/reactlogo.png";
-import BoostrapLogo from "../../assets/IMG/Bootstrap_logo.svg.png";
-import typescriptLogo from "../../assets/IMG/Typescript_logo_2020.svg.png";
-import face from "../../assets/IMG/face.jpg";
+import React, { useState } from "react";
+import left from "../../assets/IMG/arrowleft.png";
+import right from "../../assets/IMG/arrowright.png";
+import share_folder from "../../assets/IMG/sharefolder.png";
+import search from "../../assets/IMG/searchicon.png";
+import openFolder from "../../assets/IMG/openfolder.png";
+import foldericon2 from "../../assets/IMG/foldericon.png";
+import goIcon from "../../assets/IMG/go.png";
+import folderSearchIcon from "../../assets/IMG/folder_search_icom.png";
+import AboutMe from "./InternetExplorerContent/AboutMe";
+import Projects from "./InternetExplorerContent/Projects";
 
-const InternetExplorer = ({ size, address }) => {
+const InternetExplorer = ({ size }) => {
+  const [address, setAddress] = useState("C:\\Portfolio\\Projects");
+  console.log(address);
+
+  const handleAddressChange = (newValue) => {
+    setAddress(newValue);
+  };
   return (
-    <div className="InternetExplorer_content">
-      {address === "C:\\Portfolio\\Projects" && (
-        <>
-          <h1 className="text-danger text-center">My projects</h1>
-          <div
-            className="project_list"
-            style={{
-              maxHeight: `calc(${size.height}px - 175px)`,
-              overflowY: "auto",
-            }}
-          >
-            <div className="project_list_item text-light my-5 mx-5 d-flex flex-column">
-              <h3 className="text-center flex-grow-1">
-                Voting For Your favourite Animal Website
-              </h3>
-              <div className="d-flex flex-row justify-content-between align-items-center mb-3">
-                <p className="text-danger">Front-End Back-End</p>
-                <div>
-                  <img className="Skill_icons" src={Node} alt="" />
-                  <img className="Skill_icons" src={MySQL} alt="" />
-                  <img className="Skill_icons" src={CSSLogo} alt="" />
-                  <img className="Skill_icons" src={JSLogo} alt="" />
-                  <img className="Skill_icons" src={expressLogo} alt="" />
-                </div>
-              </div>
-              <div className="row flex-grow-1">
-                <div className="col-6 portfolio_text">
-                  I've developed a school project inspired by the concept of
-                  Kittenwar website. This platform allows users to create, edit,
-                  and delete their own virtual pets. These pets then engage in
-                  competitions to determine who's the better. Additionally, the
-                  website features a leaderboard showcasing top performers
-                  across various categories.
-                </div>
-                <div className="col-6">
-                  <img className="img-fluid mb-3" src={PetWars} alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="project_list_item text-light mb-5 mx-5 d-flex flex-column">
-              <h3 className="text-center flex-grow-1">Pet Adoption Website</h3>
-              <div className="d-flex flex-row justify-content-between align-items-center mb-3 px-3">
-                <p className="text-danger">Front-End Back-End</p>
-                <div>
-                  <img className="Skill_icons" src={Node} alt="" />
-                  <img className="Skill_icons" src={prismaLogo} alt="" />
-                  <img className="Skill_icons" src={CSSLogo} alt="" />
-                  <img className="Skill_icons" src={JSLogo} alt="" />
-                  <img className="Skill_icons" src={ReactLogo} alt="" />
-                  <img className="Skill_icons" src={BoostrapLogo} alt="" />
-                  <img className="Skill_icons" src={typescriptLogo} alt="" />
-                </div>
-              </div>
-              <div className="row flex-grow-1">
-                <div className="col-6">
-                  School project. Together with my classmates, we created a pet
-                  adoption website. The website allows users to upload, edit,
-                  and delete their pet posts also they can check out other
-                  people posts. The website also has a login, register, password
-                  recovery, admin panel and messaging system. I mostly
-                  contributed in backend.
-                </div>
-                <div className="col-6">
-                  <img className="img-fluid mb-3" src={PetWars} alt="" />
-                </div>
-              </div>
+    <>
+      <div className="Folder_nav py-1">
+        <div className="d-flex flex-row align-items-center gap-2">
+          <div className="d-flex align-items-center arrows_sharing ">
+            <button
+              className="btn btn-link p-0"
+              onClick={() => handleAddressChange("C:\\Portfolio\\Projects")}
+            >
+              <img src={left} alt="left arrow" className="arrows" /> Back
+            </button>
+            <button
+              className="btn btn-link p-0"
+              onClick={() => handleAddressChange("C:\\Portfolio\\About Me")}
+            >
+              <img src={right} alt="right arrow" className="arrows" />
+            </button>
+            <div className="folder_icon_hover">
+              <img
+                src={share_folder}
+                alt="share folder"
+                className="share_folder"
+              />
             </div>
           </div>
-        </>
-      )}
-      {address === "C:\\Portfolio\\About Me" && (
-        <div
-          style={{
-            maxHeight: `calc(${size.height}px - 119px)`,
-            overflowY: "auto",
-          }}
-        >
-          <h1 className="text-danger text-center ">About Me</h1>
-          <div className="d-flex justify-content-center text-center">
-            <div className="text-light">
-              <h1>
-                Dominykas <span className="text-danger">Kupšys</span>
-              </h1>
-              <img
-                className="img-fluid mb-3 rounded-circle"
-                src={face}
-                alt=""
-                style={{ width: "200px" }}
-              />
-              <h3 className="border-bottom pb-3 w-75 mx-auto text-start">
-                My Coding Journey
-              </h3>
-              <p className="w-75 mx-auto">
-                I am a full-stack developer based in Kretinga, Lithuania. My
-                coding journey started not too long ago when I began attending
-                programming courses at school. At first, I didn't enjoy it, but
-                now coding is like a hobby to me. I can't wait to acquire more
-                knowledge and skills to create amazing websites or even apps.
-              </p>
-              <h3 className="border-bottom pb-3 w-75 mx-auto text-start">
-                Education
-              </h3>
-              <p className="w-75 mx-auto">
-                I am currently studying at Klaipėdos Technologijų mokymo
-                centras. I am currently learning full-stack development.
-              </p>
-              <h3 className="border-bottom pb-3 w-75 mx-auto text-start">
-                Navigating portfolio
-              </h3>
-              <p className="w-75 mx-auto">
-                You can start by exiting current page by pressing "x" button .
-              </p>
+          <div className="Search_folders px-1  d-flex">
+            <div className="search_folder_item folder_icon_hover">
+              <img src={search} alt="search" className="Search_folders_icons" />{" "}
+              Search
             </div>
+            <div className="search_folder_item folder_icon_hover">
+              <img
+                src={openFolder}
+                alt="search"
+                className="Search_folders_icons"
+              />{" "}
+              Folders
+            </div>
+          </div>
+          <div className="folder_icon_hover">
+            <img src={foldericon2} alt="move to" className="other_icons" />
           </div>
         </div>
-      )}
-    </div>
+      </div>
+      <div className="Folder_search">
+        <div className="row">
+          <div className="col-1 d-flex align-items-center text-secondary">
+            Address
+          </div>
+          <div className="col-10 search_box">
+            <span>{address}</span>
+            <img
+              src={folderSearchIcon}
+              alt="folder search icon"
+              className="go_Icon"
+            />
+          </div>
+          <div className="col-1 d-flex align-items-center p-0">
+            <button
+              className="btn btn-link p-0"
+              onClick={() => handleAddressChange("C:\\Portfolio\\About Me")}
+            >
+              <img src={goIcon} alt="go Icon" className="go_Icon" /> Go
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="InternetExplorer_content">
+        {address === "C:\\Portfolio\\Projects" && <Projects size={size} />}
+        {address === "C:\\Portfolio\\About Me" && <AboutMe size={size} />}
+      </div>
+    </>
   );
 };
 

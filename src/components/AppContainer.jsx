@@ -4,16 +4,10 @@ import notepadLogo from "../assets/IMG/notepad_logo.png";
 import folderLogo from "../assets/IMG/xp_folder_iconm.png";
 import { Rnd } from "react-rnd";
 import resizeButton from "../assets/IMG/resizeButton.jpg";
-import left from "../assets/IMG/left.png";
-import right from "../assets/IMG/right.png";
-import share_folder from "../assets/IMG/sharefolder.png";
-import search from "../assets/IMG/searchicon.png";
-import openFolder from "../assets/IMG/openfolder.png";
-import foldericon2 from "../assets/IMG/foldericon.png";
-import goIcon from "../assets/IMG/go.png";
-import folderSearchIcon from "../assets/IMG/folder_search_icom.png";
 import AppFolderContent from "./AppContent/AppFolderContent";
 import InternetExplorer from "./AppContent/InterentExplorer";
+import MinimizeIcon from "../assets/IMG/Minimize_icon.jpg";
+import windowsLogo from "../assets/IMG/windowsxplogo.webp";
 
 const AppContainer = ({ handleAppClose, showApp }) => {
   const [size, setSize] = useState({ width: 844, height: 500 });
@@ -21,16 +15,10 @@ const AppContainer = ({ handleAppClose, showApp }) => {
   const [resize, setResize] = useState("");
   const [asis, setAsis] = useState({ x: 400, y: 90 });
   const [prevSize, setPrevSize] = useState({ width: 844, height: 500 });
-  const [address, setAddress] = useState("C:\\Portfolio\\Projects");
-  console.log(address);
-
-  const handleAddressChange = (e) => {
-    setAddress(e.target.value);
-  };
 
   function handleAppResize() {
     if (resize === "fullscreen") {
-      setSize(prevSize); // Restore previous size
+      setSize(prevSize);
       setResize("windowed");
     } else if (resize === "windowed" || resize === "") {
       const screenWidth = window.innerWidth;
@@ -56,8 +44,8 @@ const AppContainer = ({ handleAppClose, showApp }) => {
         width: size.width,
         height: size.height,
       }}
-      minWidth={500}
-      minHeight={300}
+      minWidth={740}
+      minHeight={510}
       bounds="window"
       onDragStop={(e, d) => {
         setAsis({ x: d.x, y: d.y });
@@ -103,6 +91,13 @@ const AppContainer = ({ handleAppClose, showApp }) => {
           <div className="d-flex me-2">
             <div className="close_button">
               <img
+                src={MinimizeIcon}
+                className="close_icon"
+                alt="minimize button"
+              />
+            </div>
+            <div className="close_button">
+              <img
                 src={resizeButton}
                 className="close_icon"
                 alt="resize button"
@@ -120,7 +115,7 @@ const AppContainer = ({ handleAppClose, showApp }) => {
           </div>
         </div>
         <div
-          className="notepad_navbar d-flex flex-start gap-3"
+          className="notepad_navbar d-flex align-items-center"
           style={resize === "fullscreen" ? { border: "none" } : {}}
         >
           <div className="notepad_navbar_item">File</div>
@@ -136,6 +131,15 @@ const AppContainer = ({ handleAppClose, showApp }) => {
             </>
           )}
           <div className="notepad_navbar_item">Help</div>
+          {showApp === "folder is open" && (
+            <div className="ms-auto">
+              <img
+                className="img-fluid notepad_navbar_logo"
+                src={windowsLogo}
+                alt="windows logo"
+              />
+            </div>
+          )}
         </div>
         <div
           className="notepad_content bg-light"
@@ -155,78 +159,9 @@ const AppContainer = ({ handleAppClose, showApp }) => {
               defaultValue={NotepadText}
             ></textarea>
           )}
-          <div className="Folder_nav">
-            <div className="d-flex flex-row align-items-center gap-2">
-              <div>
-                <img src={left} alt="left arrow" className="arrows disabled" />{" "}
-                Back
-                <img
-                  src={right}
-                  alt="right arrow"
-                  className="arrows disabled mx-2"
-                />
-                <img
-                  src={share_folder}
-                  alt="share folder"
-                  className="share_folder"
-                />
-              </div>
-              <div className="Search_folders px-2">
-                <img
-                  src={search}
-                  alt="left arrow"
-                  className="Search_folders_icons"
-                />{" "}
-                Search
-                <img
-                  src={openFolder}
-                  alt="right arrow"
-                  className="Search_folders_icons"
-                />{" "}
-                Folders
-              </div>
-              <div>
-                <img src={foldericon2} alt="move to" className="other_icons" />
-              </div>
-            </div>
-          </div>
-          <div className="Folder_search">
-            <div className="row">
-              <div className="col-2 d-flex align-items-center">Address</div>
-              <div className="col-8 search_box">
-                <img
-                  src={folderSearchIcon}
-                  alt="folder search icon"
-                  className="go_Icon"
-                />
-                {showApp === "folder is open" &&
-                  "C:\\Portfolio\\Technical Skills"}
-
-                {showApp === "Internet Explorer is open" && (
-                  <select
-                    name="adress"
-                    style={{ width: "90%", border: "none", outline: "none" }}
-                    id="adress"
-                    value={address}
-                    onChange={handleAddressChange}
-                  >
-                    <option value="C:\Portfolio\Projects">
-                      C:\\Portfolio\\Projects
-                    </option>
-                    <option value="C:\Portfolio\About Me">
-                      C:\\Portfolio\\About Me
-                    </option>
-                  </select>
-                )}
-              </div>
-              <div className="col-2 d-flex align-items-center ">
-                <img src={goIcon} alt="go Icon" className="go_Icon" /> Go
-              </div>
-            </div>
-          </div>
           {showApp === "folder is open" && <AppFolderContent />}
           {showApp === "Internet Explorer is open" && (
-            <InternetExplorer size={size} address={address} />
+            <InternetExplorer size={size} />
           )}
         </div>
       </div>
