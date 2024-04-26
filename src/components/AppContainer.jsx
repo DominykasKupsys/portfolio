@@ -16,19 +16,27 @@ import AppFolderContent from "./AppContent/AppFolderContent";
 import InternetExplorer from "./AppContent/InterentExplorer";
 
 const AppContainer = ({ handleAppClose, showApp }) => {
-  const [size, setSize] = useState({ width: 750, height: 500 });
+  const [size, setSize] = useState({ width: 844, height: 500 });
+  console.log(size);
   const [resize, setResize] = useState("");
   const [asis, setAsis] = useState({ x: 400, y: 90 });
+  const [prevSize, setPrevSize] = useState({ width: 844, height: 500 });
+  const [address, setAddress] = useState("C:\\Portfolio\\Projects");
+  console.log(address);
+
+  const handleAddressChange = (e) => {
+    setAddress(e.target.value);
+  };
 
   function handleAppResize() {
     if (resize === "fullscreen") {
-      setSize({ width: 750, height: 500 });
-      setAsis({ x: 400, y: 90 });
+      setSize(prevSize); // Restore previous size
       setResize("windowed");
     } else if (resize === "windowed" || resize === "") {
       const screenWidth = window.innerWidth;
       const screenHeight = window.innerHeight;
 
+      setPrevSize(size);
       setAsis({ x: 0, y: 0 });
       setSize({ width: screenWidth, height: screenHeight - 32 });
       setResize("fullscreen");
@@ -50,7 +58,13 @@ const AppContainer = ({ handleAppClose, showApp }) => {
       }}
       minWidth={500}
       minHeight={300}
-      bounds=".container-fluid"
+      bounds="window"
+      onDragStop={(e, d) => {
+        setAsis({ x: d.x, y: d.y });
+      }}
+      onResizeStop={(e, direction, ref, delta, position) => {
+        setAsis({ x: position.x, y: position.y });
+      }}
       position={{ x: asis.x, y: asis.y }}
       onResize={(e, direction, ref, delta, position) => {
         setSize({
@@ -187,8 +201,23 @@ const AppContainer = ({ handleAppClose, showApp }) => {
                 />
                 {showApp === "folder is open" &&
                   "C:\\Portfolio\\Technical Skills"}
-                {showApp === "Internet Explorer is open" &&
-                  "C:\\Portfolio\\Projects"}
+
+                {showApp === "Internet Explorer is open" && (
+                  <select
+                    name="adress"
+                    style={{ width: "90%", border: "none", outline: "none" }}
+                    id="adress"
+                    value={address}
+                    onChange={handleAddressChange}
+                  >
+                    <option value="C:\Portfolio\Projects">
+                      C:\\Portfolio\\Projects
+                    </option>
+                    <option value="C:\Portfolio\About Me">
+                      C:\\Portfolio\\About Me
+                    </option>
+                  </select>
+                )}
               </div>
               <div className="col-2 d-flex align-items-center ">
                 <img src={goIcon} alt="go Icon" className="go_Icon" /> Go
@@ -196,7 +225,9 @@ const AppContainer = ({ handleAppClose, showApp }) => {
             </div>
           </div>
           {showApp === "folder is open" && <AppFolderContent />}
-          {showApp === "Internet Explorer is open" && <InternetExplorer />}
+          {showApp === "Internet Explorer is open" && (
+            <InternetExplorer size={size} address={address} />
+          )}
         </div>
       </div>
     </Rnd>
