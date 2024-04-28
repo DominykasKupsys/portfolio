@@ -1,5 +1,5 @@
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./css/App.css";
+import "./css/App.scss";
 import WindowsFooter from "./components/WindowsFooter";
 import { useState, useEffect } from "react";
 import { Rnd } from "react-rnd";
@@ -51,8 +51,8 @@ function App() {
   };
 
   return (
-    <div className="container-fluid background">
-      <main className="content d-flex justify-content-center">
+    <div className="container-fluid">
+      <div className="desktop d-flex justify-content-center">
         <Rnd default={{ x: 0, y: 0 }}>
           <div className="app_shortcut text-center p-0">
             <img
@@ -130,7 +130,7 @@ function App() {
             showApp={showApp}
           />
         ))}
-      </main>
+      </div>
       <WindowsFooter />
     </div>
   );

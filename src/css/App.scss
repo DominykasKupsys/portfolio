@@ -1,0 +1,247 @@
+.container-fluid {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-image: url("../assets/IMG/windowsXpBackground.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    .WindowsFooter {
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 2rem;
+        background: linear-gradient(rgb(31, 47, 134) 0px,
+                rgb(49, 101, 196) 3%,
+                rgb(54, 130, 229) 6%,
+                rgb(68, 144, 230) 10%,
+                rgb(56, 131, 229) 12%,
+                rgb(43, 113, 224) 15%,
+                rgb(38, 99, 218) 18%,
+                rgb(35, 91, 214) 20%,
+                rgb(34, 88, 213) 23%,
+                rgb(33, 87, 214) 38%,
+                rgb(36, 93, 219) 54%,
+                rgb(37, 98, 223) 86%,
+                rgb(36, 95, 220) 89%,
+                rgb(33, 88, 212) 92%,
+                rgb(29, 78, 192) 95%,
+                rgb(25, 65, 165) 98%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .time_button {
+            background: linear-gradient(rgb(12, 89, 185) 1%,
+                    rgb(19, 158, 233) 6%,
+                    rgb(24, 181, 242) 10%,
+                    rgb(19, 155, 235) 14%,
+                    rgb(18, 144, 232) 19%,
+                    rgb(13, 141, 234) 63%,
+                    rgb(13, 159, 241) 81%,
+                    rgb(15, 158, 237) 88%,
+                    rgb(17, 155, 233) 91%,
+                    rgb(19, 146, 226) 94%,
+                    rgb(19, 126, 215) 97%,
+                    rgb(9, 91, 201) 100%);
+            border-left: 1px solid rgb(16, 66, 175);
+            box-shadow: rgb(24, 187, 255) 1px 0px 1px inset;
+            width: 5rem;
+            text-align: center;
+            margin-left: auto;
+            height: 100%;
+        }
+
+        .start_icon {
+            height: 100%;
+        }
+    }
+
+    .desktop {
+        .app_shortcut {
+            width: 5rem;
+            color: white;
+            font-size: 10px;
+            font-family: Tahoma, "Noto Sans", sans-serif;
+            z-index: 1;
+            position: relative;
+
+            .app_shortcut_icon {
+                height: 3rem;
+                width: 3rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        .gif-container {
+            .speech-bubble:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 75%;
+                width: 0;
+                height: 0;
+                border: 0.625em solid transparent;
+                border-top-color: #ffffe1;
+                border-bottom: 0;
+                border-left: 0;
+                margin-left: -0.312em;
+                margin-bottom: -0.625em;
+            }
+
+            .speech-bubble {
+                position: relative;
+                background: #ffffe1;
+                border-radius: 0.4em;
+                padding: 1.5rem;
+                width: 20rem;
+
+                .speech-bubble-close-button {
+                    border-color: grey;
+                    border-style: solid;
+                    color: grey;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+            }
+        }
+
+        .OpenApp {
+            overflow: hidden;
+
+            .OpenApp_header {
+                background-image: linear-gradient(to bottom,
+                        #2178f5,
+                        #0055e9 50%,
+                        #2178f5,
+                        #0044b5);
+                height: 2rem;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+
+                .header_logo {
+                    width: 2rem;
+                    height: 2rem;
+                }
+
+                .title_bar_icon {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+            }
+
+            .OpenApp_navbar {
+                background-color: #edebdd;
+                padding-left: 0.4rem;
+                border-right: 4px solid #0055e9;
+                border-left: 4px solid #0055e9;
+
+                .OpenApp_navbar_item {
+                    padding-right: 0.5rem;
+                    padding-left: 0.5rem;
+                }
+
+                .OpenApp_navbar_item:hover {
+                    background-color: #0044b5;
+                    color: white;
+                }
+
+                .OpenApp_navbar_logo {
+                    width: 2.5rem;
+                }
+            }
+
+            .OpenApp_content {
+                border-right: 4px solid #0055e9;
+                border-bottom: 4px solid #0055e9;
+                border-left: 4px solid #0055e9;
+
+                .Folder_nav {
+                    background-color: #edebdd;
+                    border: 1px solid #cdba7f;
+
+                    button {
+                        text-decoration: none;
+                        color: black;
+                    }
+
+                    .arrows {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+
+                    .Search_folders {
+                        border-right: 1px solid #cdba7f;
+                        border-left: 1px solid #cdba7f;
+
+                        .search_folder_item {
+                            padding-left: 0.5rem;
+                            padding-right: 0.5rem;
+
+                            .Search_folders_icons {
+                                width: 1.5rem;
+                                height: 1.5rem;
+                            }
+
+                        }
+                    }
+
+                    .folder_icon_hover:hover {
+                        border: 1px solid #cdba7f;
+                    }
+                }
+
+                .Folder_search {
+                    background-color: #edebdd;
+                    border-bottom: 1px solid #cdba7f;
+
+                    .search_box {
+                        border: 1px solid #0044b5;
+                        background-color: white;
+
+                        .folder_search_icon {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                        }
+                    }
+
+                    .go_Icon {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                }
+
+                // folder content style
+                .Skill_icons {
+                    width: 4rem;
+                    height: 4rem;
+                }
+
+                // internet explorer content style
+                .InternetExplorer_content {
+                    background-color: #081a31;
+
+                    .project_list_item {
+                        background-color: rgba(120, 110, 110, 0.3);
+                        padding: 1rem;
+
+                        .skill_logo {
+                            width: 5rem;
+                            height: 5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

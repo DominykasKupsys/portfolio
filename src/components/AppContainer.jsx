@@ -62,16 +62,16 @@ const AppContainer = ({ handleAppClose, showApp }) => {
       }}
     >
       <div
-        className="notepad"
+        className="OpenApp"
         style={{ width: size.width, height: size.height }}
       >
-        <div className="notepad_header d-flex justify-content-between">
+        <div className="OpenApp_header d-flex justify-content-between">
           <div>
             {showApp === "notepad is open" && (
               <div className="d-flex text-light">
                 <img
                   src={notepadLogo}
-                  className="notepad_logo"
+                  className="header_logo"
                   alt="notepad logo"
                 />
                 <p>My Soft Skills - Notepad</p>
@@ -81,7 +81,7 @@ const AppContainer = ({ handleAppClose, showApp }) => {
               <div className="d-flex text-light">
                 <img
                   src={folderLogo}
-                  className="notepad_logo"
+                  className="header_logo"
                   alt="folder logo"
                 />
                 <p>My Technical Skills</p>
@@ -92,14 +92,14 @@ const AppContainer = ({ handleAppClose, showApp }) => {
             <div className="close_button">
               <img
                 src={MinimizeIcon}
-                className="close_icon"
+                className="title_bar_icon"
                 alt="minimize button"
               />
             </div>
             <div className="close_button">
               <img
                 src={resizeButton}
-                className="close_icon"
+                className="title_bar_icon"
                 alt="resize button"
                 onClick={() => handleAppResize()}
               />
@@ -107,7 +107,7 @@ const AppContainer = ({ handleAppClose, showApp }) => {
             <div className="close_button">
               <img
                 src={closeButton}
-                className="close_icon"
+                className="title_bar_icon"
                 alt="close button"
                 onClick={() => handleAppClose(showApp)}
               />
@@ -115,28 +115,28 @@ const AppContainer = ({ handleAppClose, showApp }) => {
           </div>
         </div>
         <div
-          className="notepad_navbar d-flex align-items-center"
+          className="OpenApp_navbar d-flex align-items-center"
           style={resize === "fullscreen" ? { border: "none" } : {}}
         >
-          <div className="notepad_navbar_item">File</div>
-          <div className="notepad_navbar_item">Edit</div>
+          <div className="OpenApp_navbar_item">File</div>
+          <div className="OpenApp_navbar_item">Edit</div>
           {showApp === "notepad is open" && (
-            <div className="notepad_navbar_item">Format</div>
+            <div className="OpenApp_navbar_item">Format</div>
           )}
-          <div className="notepad_navbar_item">View</div>
+          <div className="OpenApp_navbar_item">View</div>
           {(showApp === "folder is open" ||
             showApp === "Internet Explorer is open") && (
             <>
-              <div className="notepad_navbar_item">Tools</div>
-              <div className="notepad_navbar_item">Favourites</div>
+              <div className="OpenApp_navbar_item">Tools</div>
+              <div className="OpenApp_navbar_item">Favourites</div>
             </>
           )}
-          <div className="notepad_navbar_item">Help</div>
+          <div className="OpenApp_navbar_item">Help</div>
           {(showApp === "folder is open" ||
             showApp === "Internet Explorer is open") && (
-            <div className="ms-auto">
+            <div className="ms-auto OpenApp_navbar_logo">
               <img
-                className="img-fluid notepad_navbar_logo"
+                className="img-fluid "
                 src={windowsLogo}
                 alt="windows logo"
               />
@@ -144,7 +144,7 @@ const AppContainer = ({ handleAppClose, showApp }) => {
           )}
         </div>
         <div
-          className="notepad_content bg-light"
+          className="OpenApp_content bg-light"
           style={{
             height: `calc(100% - 3.5rem)`,
             ...(resize === "fullscreen" ? { border: "none" } : {}),

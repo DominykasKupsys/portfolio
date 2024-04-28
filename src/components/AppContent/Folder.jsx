@@ -1,3 +1,5 @@
+// AppFolderContent.jsx
+
 import React from "react";
 import HTML5Logo from "../../assets/IMG/HTML5logo.png";
 import CSSLogo from "../../assets/IMG/csslogo.png";
@@ -40,9 +42,8 @@ const AppFolderContent = () => {
                 width="0.5rem"
                 height=""
                 fill="currentColor"
-                class="bi bi-caret-down-fill"
+                className="bi bi-caret-down-fill mx-1"
                 viewBox="0 0 16 16"
-                className="mx-1"
               >
                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
               </svg>
@@ -58,7 +59,7 @@ const AppFolderContent = () => {
                 width="0.5rem"
                 height="0.5rem"
                 fill="currentColor"
-                class="bi bi-caret-down-fill"
+                className="bi bi-caret-down-fill"
                 viewBox="0 0 16 16"
               >
                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
@@ -72,7 +73,7 @@ const AppFolderContent = () => {
               />
             </div>
           </div>
-          <div className="Search_folders px-1  d-flex">
+          <div className="Search_folders px-1 d-flex">
             <div className="search_folder_item folder_icon_hover">
               <img src={search} alt="search" className="Search_folders_icons" />{" "}
               Search
@@ -93,7 +94,7 @@ const AppFolderContent = () => {
               width="0.5rem"
               height="0.5rem"
               fill="currentColor"
-              class="bi bi-caret-down-fill"
+              className="bi bi-caret-down-fill"
               viewBox="0 0 16 16"
             >
               <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
@@ -110,7 +111,7 @@ const AppFolderContent = () => {
             <img
               src={folderSearchIcon}
               alt="folder search icon"
-              className="go_Icon"
+              className="folder_search_icon"
             />
             C:\\Portfolio\\Technical Skills
           </div>
