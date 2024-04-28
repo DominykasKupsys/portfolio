@@ -33,12 +33,37 @@ const AppFolderContent = () => {
       <div className="Folder_nav py-1">
         <div className="d-flex flex-row align-items-center gap-2">
           <div className="d-flex align-items-center arrows_sharing ">
-            <img src={left} alt="left arrow" className="arrows  " /> Back
-            <img
-              src={right}
-              alt="right arrow"
-              className="arrows disabled mx-2"
-            />
+            <div>
+              <img src={left} alt="left arrow" className="arrows" /> Back
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="0.5rem"
+                height=""
+                fill="currentColor"
+                class="bi bi-caret-down-fill"
+                viewBox="0 0 16 16"
+                className="mx-1"
+              >
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+              </svg>
+            </div>
+            <div>
+              <img
+                src={right}
+                alt="right arrow"
+                className="arrows disabled mx-2"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="0.5rem"
+                height="0.5rem"
+                fill="currentColor"
+                class="bi bi-caret-down-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+              </svg>
+            </div>
             <div className="folder_icon_hover">
               <img
                 src={share_folder}
@@ -62,7 +87,17 @@ const AppFolderContent = () => {
             </div>
           </div>
           <div className="folder_icon_hover">
-            <img src={foldericon2} alt="move to" className="other_icons" />
+            <img src={foldericon2} alt="move to" className="other_icons mx-1" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="0.5rem"
+              height="0.5rem"
+              fill="currentColor"
+              class="bi bi-caret-down-fill"
+              viewBox="0 0 16 16"
+            >
+              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            </svg>
           </div>
         </div>
       </div>

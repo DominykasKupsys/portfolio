@@ -4,7 +4,7 @@ import notepadLogo from "../assets/IMG/notepad_logo.png";
 import folderLogo from "../assets/IMG/xp_folder_iconm.png";
 import { Rnd } from "react-rnd";
 import resizeButton from "../assets/IMG/resizeButton.jpg";
-import AppFolderContent from "./AppContent/AppFolderContent";
+import Folder from "./AppContent/Folder";
 import InternetExplorer from "./AppContent/InterentExplorer";
 import MinimizeIcon from "../assets/IMG/Minimize_icon.jpg";
 import windowsLogo from "../assets/IMG/windowsxplogo.webp";
@@ -124,14 +124,16 @@ const AppContainer = ({ handleAppClose, showApp }) => {
             <div className="notepad_navbar_item">Format</div>
           )}
           <div className="notepad_navbar_item">View</div>
-          {showApp === "folder is open" && (
+          {(showApp === "folder is open" ||
+            showApp === "Internet Explorer is open") && (
             <>
               <div className="notepad_navbar_item">Tools</div>
               <div className="notepad_navbar_item">Favourites</div>
             </>
           )}
           <div className="notepad_navbar_item">Help</div>
-          {showApp === "folder is open" && (
+          {(showApp === "folder is open" ||
+            showApp === "Internet Explorer is open") && (
             <div className="ms-auto">
               <img
                 className="img-fluid notepad_navbar_logo"
@@ -159,7 +161,7 @@ const AppContainer = ({ handleAppClose, showApp }) => {
               defaultValue={NotepadText}
             ></textarea>
           )}
-          {showApp === "folder is open" && <AppFolderContent />}
+          {showApp === "folder is open" && <Folder />}
           {showApp === "Internet Explorer is open" && (
             <InternetExplorer size={size} />
           )}

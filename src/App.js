@@ -19,14 +19,15 @@ function App() {
   useEffect(() => {
     const texts = [
       "Hey, Welcome to Dominykas Portfolio!",
+      "You can close these messages by clicking x button on top right corner and if you need my help again just click on me!",
       "You can learn about my technical and soft skills by double clicking on the corresponding icons!",
-      "You can find out about me and my projects by double clicking on the internet explorer icon and clicking on adress bar!",
+      "You can find out about me and my projects by double clicking on the internet explorer icon and navigating by clicking right or left arrow buttons",
     ];
 
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * texts.length);
       setSpeechText(texts[randomIndex]);
-    }, 5000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, []);
@@ -97,7 +98,7 @@ function App() {
               alt="notepad app shortcut"
               onDoubleClick={() => handleAppOpen("Internet Explorer is open")}
             />
-            <p>My Projects</p>
+            <p>My Projects + About Me</p>
           </div>
         </Rnd>
         <Rnd default={{ x: 1100, y: 300 }}>

@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import left from "../../assets/IMG/arrowleft.png";
 import right from "../../assets/IMG/arrowright.png";
-import share_folder from "../../assets/IMG/sharefolder.png";
 import search from "../../assets/IMG/searchicon.png";
-import openFolder from "../../assets/IMG/openfolder.png";
-import foldericon2 from "../../assets/IMG/foldericon.png";
 import goIcon from "../../assets/IMG/go.png";
-import folderSearchIcon from "../../assets/IMG/folder_search_icom.png";
 import AboutMe from "./InternetExplorerContent/AboutMe";
 import Projects from "./InternetExplorerContent/Projects";
+import ClosePage from "../../assets/IMG/pagex.png";
+import RefreshPage from "../../assets/IMG/pagerefresh.png";
+import GoHomeIcon from "../../assets/IMG/house.png";
+import FavouriteIcon from "../../assets/IMG/start.png";
+import shareTime from "../../assets/IMG/clock.png";
+import email from "../../assets/IMG/letter.png";
+import print from "../../assets/IMG/taxmachine.png";
+import text from "../../assets/IMG/writing.png";
+import share from "../../assets/IMG/people.png";
+import ExplorerPage from "../../assets/IMG/internetexplorerpage.png";
 
 const InternetExplorer = ({ size }) => {
-  const [address, setAddress] = useState("C:\\Portfolio\\Projects");
-  console.log(address);
+  const [address, setAddress] = useState("DomykasDev.com/Portfolio/Projects");
 
   const handleAddressChange = (newValue) => {
     setAddress(newValue);
@@ -24,22 +29,52 @@ const InternetExplorer = ({ size }) => {
           <div className="d-flex align-items-center arrows_sharing ">
             <button
               className="btn btn-link p-0"
-              onClick={() => handleAddressChange("C:\\Portfolio\\Projects")}
+              onClick={() =>
+                handleAddressChange("DomykasDev.com/Portfolio/Projects")
+              }
             >
-              <img src={left} alt="left arrow" className="arrows" /> Back
+              <img src={left} alt="left arrow" className="arrows" /> Back{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="0.5rem"
+                height="0.5rem"
+                fill="currentColor"
+                class="bi bi-caret-down-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+              </svg>
             </button>
             <button
               className="btn btn-link p-0"
-              onClick={() => handleAddressChange("C:\\Portfolio\\About Me")}
+              onClick={() =>
+                handleAddressChange("DomykasDev.com/Portfolio/About Me")
+              }
             >
               <img src={right} alt="right arrow" className="arrows" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="0.5rem"
+                height="0.5rem"
+                fill="currentColor"
+                class="bi bi-caret-down-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+              </svg>
             </button>
             <div className="folder_icon_hover">
+              <img src={ClosePage} alt="close page" className="share_folder" />
+            </div>
+            <div className="folder_icon_hover">
               <img
-                src={share_folder}
-                alt="share folder"
+                src={RefreshPage}
+                alt="refresh page"
                 className="share_folder"
               />
+            </div>
+            <div className="folder_icon_hover">
+              <img src={GoHomeIcon} alt="home" className="share_folder" />
             </div>
           </div>
           <div className="Search_folders px-1  d-flex">
@@ -49,15 +84,39 @@ const InternetExplorer = ({ size }) => {
             </div>
             <div className="search_folder_item folder_icon_hover">
               <img
-                src={openFolder}
-                alt="search"
+                src={FavouriteIcon}
+                alt="favourite"
                 className="Search_folders_icons"
               />{" "}
-              Folders
+              Favourites
+            </div>
+            <div className="search_folder_item folder_icon_hover">
+              <img
+                src={shareTime}
+                alt="share_clock"
+                className="Search_folders_icons"
+              />
             </div>
           </div>
           <div className="folder_icon_hover">
-            <img src={foldericon2} alt="move to" className="other_icons" />
+            <img src={email} alt="email" className="other_icons" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="0.5rem"
+              height="0.5rem"
+              fill="currentColor"
+              class="bi bi-caret-down-fill"
+              viewBox="0 0 16 16"
+            >
+              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+            </svg>
+          </div>
+          <div className="folder_icon_hover">
+            <img src={print} alt="print" className="other_icons" />
+          </div>
+          <img src={text} alt="write" className="other_icons" />
+          <div className="folder_icon_hover">
+            <img src={share} alt="friends" className="other_icons" />
           </div>
         </div>
       </div>
@@ -67,26 +126,25 @@ const InternetExplorer = ({ size }) => {
             Address
           </div>
           <div className="col-10 search_box">
-            <span>{address}</span>
             <img
-              src={folderSearchIcon}
-              alt="folder search icon"
-              className="go_Icon"
+              src={ExplorerPage}
+              alt="Internet Explorer page"
+              className="go_Icon me-2"
             />
+            <span>{address}</span>
           </div>
           <div className="col-1 d-flex align-items-center p-0">
-            <button
-              className="btn btn-link p-0"
-              onClick={() => handleAddressChange("C:\\Portfolio\\About Me")}
-            >
-              <img src={goIcon} alt="go Icon" className="go_Icon" /> Go
-            </button>
+            <img src={goIcon} alt="go Icon" className="go_Icon" /> Go
           </div>
         </div>
       </div>
       <div className="InternetExplorer_content">
-        {address === "C:\\Portfolio\\Projects" && <Projects size={size} />}
-        {address === "C:\\Portfolio\\About Me" && <AboutMe size={size} />}
+        {address === "DomykasDev.com/Portfolio/Projects" && (
+          <Projects size={size} />
+        )}
+        {address === "DomykasDev.com/Portfolio/About Me" && (
+          <AboutMe size={size} />
+        )}
       </div>
     </>
   );

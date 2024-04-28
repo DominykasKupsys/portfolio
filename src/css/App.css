@@ -73,12 +73,19 @@
   width: 4rem;
   height: 4rem;
 }
-
+.Folder_nav button {
+  text-decoration: none;
+  color: black;
+}
 .notepad {
   overflow: hidden;
+  z-index: 2;
 }
 .react-draggable-dragged {
   z-index: 2;
+}
+.gif {
+  z-index: 1;
 }
 .notepad_header {
   background-image: linear-gradient(
