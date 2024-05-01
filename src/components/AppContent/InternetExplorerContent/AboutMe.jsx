@@ -1,5 +1,5 @@
 import React from "react";
-import face from "../../../assets/IMG/face.jpg";
+import face from "../../../assets/IMG/LinkedInProfile.png";
 
 const AboutMe = ({ size }) => {
   return (
@@ -20,7 +20,7 @@ const AboutMe = ({ size }) => {
             className="img-fluid mb-3 rounded-circle"
             src={face}
             alt=""
-            style={{ width: "200px" }}
+            style={{ width: "12.5rem" }}
           />
           <h3 className="border-bottom pb-3 w-75 mx-auto text-start">
             My Coding Journey

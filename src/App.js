@@ -9,6 +9,7 @@ import folderLogo from "./assets/IMG/openfolder.png";
 import githubLogo from "./assets/IMG/githublogo.webp";
 import InternetExplorerLogo from "./assets/IMG/internetExplorer_icon.png";
 import clippy from "./assets/IMG/clippy.gif";
+import LinkedIn from "./assets/IMG/LinkedIn_icon.svg.png";
 
 function App() {
   const [speechText, setSpeechText] = useState(
@@ -99,6 +100,24 @@ function App() {
               onDoubleClick={() => handleAppOpen("Internet Explorer is open")}
             />
             <p>My Projects + About Me</p>
+          </div>
+        </Rnd>
+        <Rnd default={{ x: 0, y: 320 }}>
+          <div
+            className="app_shortcut text-center p-0"
+            onDoubleClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/dominykas-kupšys-bb6287301",
+                "_blank"
+              )
+            }
+          >
+            <img
+              src={LinkedIn}
+              className="app_shortcut_icon"
+              alt="github app shortcut"
+            />
+            <p>My LinkedIn</p>
           </div>
         </Rnd>
         <div className="gif-container">
