@@ -8,6 +8,7 @@ const AboutMe = ({ size }) => {
         maxHeight: `calc(${size.height}px - 8rem)`,
         overflowY: "auto",
       }}
+      className=""
     >
       <h1 className="text-danger text-center ">About Me</h1>
       <div className="d-flex justify-content-center text-center">
@@ -37,6 +38,13 @@ const AboutMe = ({ size }) => {
           <p className="w-75 mx-auto">
             I am currently studying at Klaipėdos Technologijų mokymo centras. I
             am currently learning full-stack development.
+          </p>
+          <h3 className="border-bottom pb-3 w-75 mx-auto text-start">
+            My Contact Information
+          </h3>
+          <p className="w-75 mx-auto">
+            Email:{" "}
+            <span className="text-danger">dominykaskupdev@gmail.com</span>
           </p>
         </div>
       </div>

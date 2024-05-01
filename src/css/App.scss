@@ -64,6 +64,7 @@
     }
 
     .desktop {
+
         .app_shortcut {
             width: 5rem;
             color: white;
@@ -83,6 +84,12 @@
         }
 
         .gif-container {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-bottom: 3rem;
+            margin-right: 1rem;
+
             .speech-bubble:after {
                 content: "";
                 position: absolute;
@@ -117,6 +124,7 @@
 
         .OpenApp {
             overflow: hidden;
+            border-bottom: 4px solid #0055e9;
 
             .OpenApp_header {
                 background-image: linear-gradient(to bottom,
@@ -127,6 +135,10 @@
                 height: 2rem;
                 border-top-left-radius: 10px;
                 border-top-right-radius: 10px;
+
+                .header-drag-handle {
+                    cursor: move;
+                }
 
                 .header_logo {
                     width: 2rem;
@@ -162,7 +174,6 @@
 
             .OpenApp_content {
                 border-right: 4px solid #0055e9;
-                border-bottom: 4px solid #0055e9;
                 border-left: 4px solid #0055e9;
 
                 .Folder_nav {
@@ -229,6 +240,7 @@
                 // internet explorer content style
                 .InternetExplorer_content {
                     background-color: #081a31;
+                    height: 100vh;
 
                     .project_list_item {
                         background-color: rgba(120, 110, 110, 0.3);
@@ -237,6 +249,15 @@
                         .skill_logo {
                             width: 5rem;
                             height: 5rem;
+                        }
+
+                        .btn-project {
+                            background-color: #081A31;
+
+                            a {
+                                color: white;
+                                text-decoration: none;
+                            }
                         }
                     }
                 }

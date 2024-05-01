@@ -13,6 +13,7 @@ const AppContainer = ({ handleAppClose, showApp }) => {
   const [size, setSize] = useState({ width: 844, height: 500 });
   console.log(size);
   const [resize, setResize] = useState("");
+  console.log(resize);
   const [asis, setAsis] = useState({ x: 400, y: 90 });
   const [prevSize, setPrevSize] = useState({ width: 844, height: 500 });
 
@@ -50,6 +51,7 @@ const AppContainer = ({ handleAppClose, showApp }) => {
       onDragStop={(e, d) => {
         setAsis({ x: d.x, y: d.y });
       }}
+      dragHandleClassName="header-drag-handle"
       onResizeStop={(e, direction, ref, delta, position) => {
         setAsis({ x: position.x, y: position.y });
       }}
@@ -63,9 +65,18 @@ const AppContainer = ({ handleAppClose, showApp }) => {
     >
       <div
         className="OpenApp"
-        style={{ width: size.width, height: size.height }}
+        style={{
+          width: size.width,
+          height: size.height,
+          ...(resize === "fullscreen" ? { border: "none" } : {}),
+        }}
       >
-        <div className="OpenApp_header d-flex justify-content-between">
+        <div
+          className="OpenApp_header d-flex justify-content-between header-drag-handle"
+          onDragStop={(e, d) => {
+            setAsis({ x: d.x, y: d.y });
+          }}
+        >
           <div>
             {showApp === "notepad is open" && (
               <div className="d-flex text-light">
@@ -161,7 +172,7 @@ const AppContainer = ({ handleAppClose, showApp }) => {
               defaultValue={NotepadText}
             ></textarea>
           )}
-          {showApp === "folder is open" && <Folder />}
+          {showApp === "folder is open" && <Folder size={size} />}
           {showApp === "Internet Explorer is open" && (
             <InternetExplorer size={size} />
           )}

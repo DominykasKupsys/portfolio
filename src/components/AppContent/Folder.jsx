@@ -17,6 +17,13 @@ import openFolder from "../../assets/IMG/openfolder.png";
 import foldericon2 from "../../assets/IMG/foldericon.png";
 import goIcon from "../../assets/IMG/go.png";
 import folderSearchIcon from "../../assets/IMG/folder_search_icom.png";
+import prisma from "../../assets/IMG/primsaIcON.png";
+import express from "../../assets/IMG/expressJSlogo.png";
+import phpmyadmin from "../../assets/IMG/phpmyadmin.png";
+import postman from "../../assets/IMG/postmanlogo.png";
+import git from "../../assets/IMG/gitlogo.png";
+import linux from "../../assets/IMG/linux.png";
+import github from "../../assets/IMG/githublogo.png";
 
 const logos = [
   { src: HTML5Logo, alt: "HTML5", name: "HTML" },
@@ -27,9 +34,16 @@ const logos = [
   { src: Node, alt: "Node", name: "Node" },
   { src: MySQL, alt: "MySQL", name: "MySQL" },
   { src: MongoDB, alt: "MongoDB", name: "MongoDB" },
+  { src: prisma, alt: "Prisma", name: "Prisma" },
+  { src: express, alt: "Express", name: "Express" },
+  { src: phpmyadmin, alt: "phpMyAdmin", name: "phpMyAdmin" },
+  { src: postman, alt: "Postman", name: "Postman" },
+  { src: git, alt: "Git", name: "Git" },
+  { src: linux, alt: "Linux", name: "Linux" },
+  { src: github, alt: "GitHub", name: "GitHub" },
 ];
 
-const AppFolderContent = () => {
+const AppFolderContent = ({ size }) => {
   return (
     <>
       <div className="Folder_nav py-1">
@@ -120,7 +134,13 @@ const AppFolderContent = () => {
           </div>
         </div>
       </div>
-      <div className="Folder_content d-flex gap-3 flex-wrap">
+      <div
+        className="Folder_content d-flex gap-3 flex-wrap"
+        style={{
+          maxHeight: `calc(${size.height}px - 11rem)`,
+          overflowY: "auto",
+        }}
+      >
         {logos.map((logo, index) => (
           <div key={index} className="ms-2 mt-3 app_icons">
             <div className="d-flex justify-content-center">

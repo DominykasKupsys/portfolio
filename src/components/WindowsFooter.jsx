@@ -7,8 +7,10 @@ const WindowsFooter = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       const currentDate = new Date();
-      const timeString =
-        currentDate.getHours() + ":" + currentDate.getMinutes();
+      const hours = currentDate.getHours();
+      const minutes = currentDate.getMinutes();
+      const paddedMinutes = minutes < 10 ? "0" + minutes : minutes;
+      const timeString = hours + ":" + paddedMinutes;
       setShowTime(timeString);
     }, 1000);
 
