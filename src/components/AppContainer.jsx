@@ -31,12 +31,7 @@ const AppContainer = ({ handleAppClose, showApp }) => {
       setResize("fullscreen");
     }
   }
-  const NotepadText = `My Soft Skills:
-  Honesty, 
-  Hard work, 
-  Responsibility, 
-  Loyalty, 
-  Always trying to improve.`;
+  const NotepadText = `My Soft Skills: Honesty, Hard work, Responsibility, Loyalty, Always trying to improve.`;
   return (
     <Rnd
       default={{
@@ -162,15 +157,16 @@ const AppContainer = ({ handleAppClose, showApp }) => {
           }}
         >
           {showApp === "notepad is open" && (
-            <textarea
+            <p
               className="w-100 h-100 p-2 border-0"
               style={{
                 resize: "none",
                 outline: "none",
                 textDecoration: "none",
               }}
-              defaultValue={NotepadText}
-            ></textarea>
+            >
+              {NotepadText}
+            </p>
           )}
           {showApp === "folder is open" && <Folder size={size} />}
           {showApp === "Internet Explorer is open" && (
