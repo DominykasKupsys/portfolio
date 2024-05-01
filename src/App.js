@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     const texts = [
-      "Hey, Welcome to Dominykas Portfolio! I will try to help navigate this portfolio.",
+      "Hey, Welcome to Dominykas Portfolio! I will try to help you navigate this portfolio.",
       "You can close these messages by clicking x button on top right corner and if you need my help again just click on me!",
       "You can learn about my technical and soft skills by double clicking on the corresponding icons!",
       "You can find out about me and my projects by double clicking on the internet explorer icon and navigating by clicking right or left arrow buttons",
