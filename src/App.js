@@ -60,7 +60,7 @@ function App() {
               src={notepadLogo}
               className="app_shortcut_icon"
               alt="notepad app shortcut"
-              onDoubleClick={() => handleAppOpen("notepad is open")}
+              onClick={() => handleAppOpen("notepad is open")}
             />
             <p>My Soft Skills</p>
           </div>
@@ -71,7 +71,7 @@ function App() {
               src={folderLogo}
               className="app_shortcut_icon"
               alt="folder app shortcut"
-              onDoubleClick={() => handleAppOpen("folder is open")}
+              onClick={() => handleAppOpen("folder is open")}
             />
             <p>My Technical Skills</p>
           </div>
@@ -79,7 +79,7 @@ function App() {
         <Rnd default={{ x: 0, y: 160 }}>
           <div
             className="app_shortcut text-center p-0"
-            onDoubleClick={() =>
+            onClick={() =>
               window.open("https://github.com/DominykasKupsys", "_blank")
             }
           >
@@ -97,7 +97,7 @@ function App() {
               src={InternetExplorerLogo}
               className="app_shortcut_icon"
               alt="notepad app shortcut"
-              onDoubleClick={() => handleAppOpen("Internet Explorer is open")}
+              onClick={() => handleAppOpen("Internet Explorer is open")}
             />
             <p>My Projects + About Me</p>
           </div>
@@ -105,7 +105,7 @@ function App() {
         <Rnd default={{ x: 0, y: 320 }}>
           <div
             className="app_shortcut text-center p-0"
-            onDoubleClick={() =>
+            onClick={() =>
               window.open(
                 "https://www.linkedin.com/in/dominykas-kupšys-bb6287301",
                 "_blank"
